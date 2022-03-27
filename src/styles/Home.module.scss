@@ -1,0 +1,40 @@
+.conteiner {
+    width: 1080px;
+    margin: 0 auto;
+    
+}
+
+.content {
+    padding: 2rem 0;
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 1rem;
+
+        li {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--purple-500);
+            border-radius: 1rem;
+            
+
+            img {
+                width: 100%;
+                border-radius: 1rem 1rem 0 0;
+            }
+
+            span {
+                padding: 1rem 0;
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+            p {
+                text-align: justify;
+                padding: 0.8rem;
+            }
+        }
+    }
+}
