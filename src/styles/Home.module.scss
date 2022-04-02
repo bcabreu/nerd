@@ -1,7 +1,8 @@
 .conteiner {
-    width: 1080px;
+    width: 100%;
     margin: 0 auto;
     
+  
 }
 
 .content {
@@ -35,6 +36,14 @@
                 text-align: justify;
                 padding: 0.8rem;
             }
+        }
+    }
+
+    @media(min-width: 360px) {
+
+        ul {
+            grid-template-columns: repeat(1, auto);
+            gap: 2.5rem;
         }
     }
 }

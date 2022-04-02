@@ -1,5 +1,6 @@
 .container {
     background: var(--purple-700);
+
 }
 
 .containt {
@@ -13,27 +14,23 @@
 }
 
 .menu {
-        border: 0.1rem solid var(--gray-700);
-        border-left: 0;
-        border-right: 0;
-        padding: 0.5rem;
-        background: var(--gray-900);
+    border: 0.1rem solid var(--gray-700);
+    border-left: 0;
+    border-right: 0;
+    padding: 0.5rem;
+    background: var(--gray-900);
 
+    ul{
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 auto;
 
-        ul{
-            width: 80%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin: 0 auto;
-
-            li{
-                list-style: none;
-                text-transform: uppercase;
-                font-size: 0.8rem;
-            }
+        li{
+            list-style: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
         }
-
-        
-    
+    }
 }

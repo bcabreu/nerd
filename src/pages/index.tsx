@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import {Hearder} from '../components/Header/Header'
 import styles from '../styles/Home.module.scss'
 import api from './api/marvel';
+import Image from 'next/image'
 
 interface CharactersProps {
   id: number;
@@ -60,7 +61,7 @@ useEffect(() => {
               {events.map(event => {
                 return (
                   <li key={event.id}>
-                    <img src={`${event.thumbnail.path}.${event.thumbnail.extension}`} alt={`Nome do ${event.title}`}></img>
+                    <img src={`${event.thumbnail.path}.${event.thumbnail.extension}`} alt={`Nome do ${event.title}`} />
                     <span className="name">{event.title}</span>
                     <p>{`${event.description}`}</p>
                   </li>
