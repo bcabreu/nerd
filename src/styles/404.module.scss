@@ -6,7 +6,7 @@
     background-color: var(--black-700);
     background-repeat: none;
     background-position: center;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 8.5rem);
     width: 100%;
     text-align: center;
 
@@ -48,6 +48,7 @@
 
 @media(max-width: 420px) {
     .content {
+
         h1 {
             font-size: 1.5rem;
         }
