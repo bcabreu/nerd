@@ -64,7 +64,7 @@ useEffect(() => {
       <Head>
         <title>Arena Nerd | O melhor conteúdo Nerd você encontra aqui!</title>
         <meta name="description" content="Tudo sobre o mundo nerd, filmes, séries e personagens da Marvel e DC Comics!" />
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hearder />
