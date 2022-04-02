@@ -38,12 +38,13 @@
             }
         }
     }
+}
 
-    @media(min-width: 360px) {
+@media(max-width: 390px) {
+    .content
 
-        ul {
-            grid-template-columns: repeat(1, auto);
-            gap: 2.5rem;
-        }
+    ul {
+        grid-template-columns: repeat(1, auto);
+        gap: 2.5rem;
     }
 }

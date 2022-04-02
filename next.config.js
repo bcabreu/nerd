@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
-    domains: ['http://gateway.marvel.com'],
+    domains: ['https://gateway.marvel.com'],
   }
 }
 
