@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import {Hearder} from '../components/Header/Header'
+import {Header} from '../components/Header/Header'
 import styles from '../styles/Home.module.scss'
 import api from './api/marvel';
 
@@ -22,7 +22,8 @@ interface EventsProps {
     path: string;
     extension: string
   };
-  resourceURI: string
+  resourceURI: string;
+  next: string
 }
 
 interface EventsPropsSSG {
@@ -50,6 +51,7 @@ useEffect(() => {
     try {
       // const {data} = await api.get('/events');
       // setEvents(data.data.results)
+      console.log(series)
       setEvents(series)
     }catch (error) {
       console.error('Ops! Deu erro' + error)
@@ -72,14 +74,14 @@ useEffect(() => {
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hearder />
+      <Header />
       <div className={styles.conteiner}>
         <div className={styles.content}>
           <ul>
               {events.map(event => {
                 return (
                   <li key={event.id}>
-                    <img src={`${event.thumbnail.path}.${event.thumbnail.extension}`} alt={`Nome do ${event.title}`}/>
+                    <img src={`${event.thumbnail.path}.${event.thumbnail.extension}`} alt={`${event.title}`} />
                     <span className="name">{event.title}</span>
                     <p>{`${event.description}`}</p>
                   </li>
@@ -101,7 +103,8 @@ export async function getStaticProps() {
   return {
     props: {
       series
-    }
+    },
+    revalidate: 60 * 60 * 24 //24 horas
   }
 }
 

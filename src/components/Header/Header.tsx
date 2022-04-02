@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 
 
-export function Hearder() {
+export function Header() {
     return (
     <>
         <header className={styles.container}>
