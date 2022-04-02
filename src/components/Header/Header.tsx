@@ -7,7 +7,7 @@ export function Hearder() {
     <>
         <header className={styles.container}>
             <div className={styles.containt}>
-                <h1>Arena Nerd</h1>
+                <h1>Kepoweb</h1>
             </div>
             <nav className={styles.menu}>
                 

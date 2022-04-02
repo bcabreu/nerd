@@ -7,6 +7,7 @@ const publicKey = "85544dfe67c132de5fc9938b1cd25cb6"
 const time = Number(new Date())
 const hash = md5(time + secretKey + publicKey)
 const baseURL = "https://gateway.marvel.com/v1/public"
+const accept = '*/*'
 
 
 

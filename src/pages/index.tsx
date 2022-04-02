@@ -44,8 +44,8 @@ interface SeriesProps {
 // useEffect(() => {
 //   async function getItens() {
 //     try {
-//       const {data} = await api.get('/event');
-//       setEvents(data)
+//       const {data} = await api.get('/events');
+//       setEvents(data.data.results)
 //     }catch {
 //       console.log('Ops! Deu erro')
 //     }
@@ -62,7 +62,7 @@ useEffect(() => {
   return (
     <>
       <Head>
-        <title>Arena Nerd | O melhor conteúdo Nerd você encontra aqui!</title>
+        <title>Kepoweb | O melhor conteúdo Nerd você encontra aqui!</title>
         <meta name="description" content="Tudo sobre o mundo nerd, filmes, séries e personagens da Marvel e DC Comics!" />
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
         <link rel="icon" href="/favicon.ico" />
