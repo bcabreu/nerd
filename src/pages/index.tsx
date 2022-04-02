@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import {Hearder} from '../components/Header/Header'
 import styles from '../styles/Home.module.scss'
 import api from './api/marvel';
-import Image from 'next/image'
 
 interface CharactersProps {
   id: number;
@@ -37,13 +36,26 @@ interface SeriesProps {
   rating: string
 }
 
-export default function Home() {
+ export default function Home() {
 
   const [events, setEvents] = useState<EventsProps[]>([])
 
+
+// useEffect(() => {
+//   async function getItens() {
+//     try {
+//       const {data} = await api.get('/event');
+//       setEvents(data)
+//     }catch {
+//       console.log('Ops! Deu erro')
+//     }
+//   }
+//   getItens()
+// }, [])
+
 useEffect(() => {
-  api.get("/events")
-  .then( response => setEvents(response.data.data.results))
+   api.get("/events")
+  .then(response => setEvents(response.data.data.results))
   .catch(err => console.log('Ops! Deu o erro' + err))
 }, []) 
 
@@ -61,7 +73,7 @@ useEffect(() => {
               {events.map(event => {
                 return (
                   <li key={event.id}>
-                    <img src={`${event.thumbnail.path}.${event.thumbnail.extension}`} alt={`Nome do ${event.title}`} />
+                    <img src={`${event.thumbnail.path}.${event.thumbnail.extension}`} alt={`Nome do ${event.title}`}/>
                     <span className="name">{event.title}</span>
                     <p>{`${event.description}`}</p>
                   </li>
