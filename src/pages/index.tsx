@@ -25,6 +25,10 @@ interface EventsProps {
   resourceURI: string
 }
 
+interface EventsPropsSSG {
+  series: []
+}
+
 interface SeriesProps {
   id: number;
   title: string;
@@ -36,28 +40,29 @@ interface SeriesProps {
   rating: string
 }
 
- export default function Home() {
+ export default function Home({series}: EventsPropsSSG) {
 
   const [events, setEvents] = useState<EventsProps[]>([])
 
 
-// useEffect(() => {
-//   async function getItens() {
-//     try {
-//       const {data} = await api.get('/events');
-//       setEvents(data.data.results)
-//     }catch {
-//       console.log('Ops! Deu erro')
-//     }
-//   }
-//   getItens()
-// }, [])
-
 useEffect(() => {
-   api.get("/events")
-  .then(response => setEvents(response.data.data.results))
-  .catch(err => console.log('Ops! Deu o erro' + err))
-}, []) 
+  async function getItens() {
+    try {
+      // const {data} = await api.get('/events');
+      // setEvents(data.data.results)
+      setEvents(series)
+    }catch (error) {
+      console.error('Ops! Deu erro' + error)
+    }
+  }
+  getItens()
+}, [])
+
+// useEffect(() => {
+//    api.get("/events")
+//   .then(response => setEvents(response.data.data.results))
+//   .catch(err => console.log('Ops! Deu o erro' + err))
+// }, []) 
 
   return (
     <>
@@ -87,5 +92,16 @@ useEffect(() => {
       
       </>
   )
+}
+
+export async function getStaticProps() {
+  const res = await api.get('/events')
+  const series = await res.data.data.results
+
+  return {
+    props: {
+      series
+    }
+  }
 }
 
